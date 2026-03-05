@@ -10,7 +10,7 @@
 
 如果你发现文档中有错误或不清楚的地方：
 
-1. 在 [Issues](https://github.com/your-username/openspec-learning-guide/issues) 中搜索是否已有相关问题
+1. 在 [Issues](https://github.com/xiaojian98/openspec-learning-guide/issues) 中搜索是否已有相关问题
 2. 如果没有，创建新的 Issue，包含：
    - 问题描述
    - 所在文档位置
@@ -138,8 +138,8 @@ openspec schema validate security-first
 
 ## 联系方式
 
-- Issues: [GitHub Issues](https://github.com/your-username/openspec-learning-guide/issues)
-- Discussions: [GitHub Discussions](https://github.com/your-username/openspec-learning-guide/discussions)
+- Issues: [GitHub Issues](https://github.com/xiaojian98/openspec-learning-guide/issues)
+- Discussions: [GitHub Discussions](https://github.com/xiaojian98/openspec-learning-guide/discussions)
 
 ---
 

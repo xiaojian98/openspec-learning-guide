@@ -1,0 +1,49 @@
+# 快速原型 Schema
+name: quick-prototype
+version: 1
+description: |
+  快速原型工作流，适用于 POC、黑客马拉松、想法验证等
+  需要快速迭代的场景。强调并行和轻量级。
+
+artifacts:
+  - id: idea
+    generates: idea.md
+    template: idea.md
+    requires: []
+    instruction: |
+      描述核心想法：要验证什么？为什么值得做？
+      保持简洁，1-2 段话即可。
+
+  - id: prototype
+    generates: prototype.md
+    template: prototype.md
+    requires: [idea]
+    instruction: |
+      描述原型实现：
+      1. 核心代码结构
+      2. 关键技术选择
+      3. 已知限制
+
+  - id: demo-flow
+    generates: demo-flow.md
+    template: demo-flow.md
+    requires: [idea]
+    instruction: |
+      描述演示流程：
+      1. 如何启动原型
+      2. 演示步骤
+      3. 预期效果
+
+  - id: tech-notes
+    generates: tech-notes.md
+    template: tech-notes.md
+    requires: [idea]
+    instruction: |
+      技术笔记：
+      1. 遇到的问题
+      2. 解决方案
+      3. 待探索的方向
+
+apply:
+  requires: [prototype]
+  tracks: prototype.md

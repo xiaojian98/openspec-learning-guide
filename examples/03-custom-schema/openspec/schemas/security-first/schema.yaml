@@ -1,0 +1,55 @@
+# 安全审查优先的 Schema
+name: security-first
+version: 1
+description: |
+  安全审查优先的工作流，适用于金融、支付、用户数据处理等
+  对安全性要求较高的项目。
+
+artifacts:
+  - id: proposal
+    generates: proposal.md
+    template: proposal.md
+    requires: []
+    instruction: |
+      创建变更提案，描述要做什么、为什么做、范围是什么。
+      特别注意说明涉及的数据类型和安全边界。
+
+  - id: security-review
+    generates: security-review.md
+    template: security-review.md
+    requires: [proposal]
+    instruction: |
+      基于提案进行安全审查，评估：
+      1. 认证授权：谁可以访问？如何验证？
+      2. 数据安全：处理什么数据？如何保护？
+      3. API 安全：输入验证？速率限制？
+      4. 潜在风险：可能的安全漏洞？
+      5. 合规性：是否涉及法规要求？
+
+  - id: specs
+    generates: specs/**/*.md
+    template: spec.md
+    requires: [proposal, security-review]
+    instruction: |
+      基于提案和安全审查，创建功能规范。
+      每个规范必须考虑安全审查中提出的要求。
+
+  - id: design
+    generates: design.md
+    template: design.md
+    requires: [specs]
+    instruction: |
+      基于规范创建技术设计。
+      设计中必须体现安全审查的结论。
+
+  - id: tasks
+    generates: tasks.md
+    template: tasks.md
+    requires: [design]
+    instruction: |
+      将设计分解为实现任务。
+      安全相关的任务应该标记为高优先级。
+
+apply:
+  requires: [tasks]
+  tracks: tasks.md

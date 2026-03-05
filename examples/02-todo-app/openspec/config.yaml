@@ -1,0 +1,13 @@
+schema: spec-driven
+
+context: |
+  语言：中文（简体）
+  所有产出物必须用简体中文撰写。
+
+  技术栈: TypeScript + Node.js
+  运行环境: Node.js 20+
+
+  代码规范:
+  - 使用 ES Modules
+  - 使用 TypeScript strict mode
+  - 优先使用函数式风格

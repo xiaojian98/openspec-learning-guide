@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="assets/openspec-learning-guide.png" alt="OpenSpec 中文学习指南" width="400">
-</p>
-
 <h1 align="center">OpenSpec 中文学习指南</h1>
 
 <p align="center">
